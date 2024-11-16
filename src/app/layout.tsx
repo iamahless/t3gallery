@@ -7,6 +7,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import { extractRouterConfig } from "uploadthing/server";
+import { Toaster } from "~/components/ui/sonner";
 import TopNav from "./_components/topnav";
 import { ourFileRouter } from "./api/uploadthing/core";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
             {modal}
           </div>
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
