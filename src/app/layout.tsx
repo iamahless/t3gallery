@@ -5,9 +5,15 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { Inter } from "next/font/google";
 import { extractRouterConfig } from "uploadthing/server";
 import TopNav from "./_components/topnav";
 import { ourFileRouter } from "./api/uploadthing/core";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -34,10 +40,12 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className="flex flex-col gap-4">
-          <TopNav />
-          {children}
-          {modal}
+        <body className={`font-sans ${inter.variable}`}>
+          <div className="grid h-screen grid-rows-[auto,1fr]">
+            <TopNav />
+            <main className="overflow-y-scroll">{children}</main>
+            {modal}
+          </div>
           <div id="modal-root" />
         </body>
       </html>
