@@ -16,5 +16,5 @@
 - [x] ShadUI toast component
 - [x] Update upload button to be less cringe
 - [ ] Delete button (with server actions)
-- [ ] Analytics (posthog)
+- [x] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
